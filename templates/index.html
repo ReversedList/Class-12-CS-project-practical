@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <aside class="w-64 bg-indigo-900 text-white hidden md:flex md:flex-col justify-between p-6">
+            <div>
+                <h1 class="text-2xl font-bold tracking-wider mb-8">💰 FinanceApp</h1>
+                <nav class="space-y-4">
+                    <a href="#" class="block py-2.5 px-4 rounded bg-indigo-800 font-medium text-white">Dashboard</a>
+                    <a href="#" class="block py-2.5 px-4 rounded hover:bg-indigo-800 text-indigo-200 transition">Transactions</a>
+                    <a href="#" class="block py-2.5 px-4 rounded hover:bg-indigo-800 text-indigo-200 transition">Categories</a>
+                    <a href="#" class="block py-2.5 px-4 rounded hover:bg-indigo-800 text-indigo-200 transition">Settings</a>
+                </nav>
+            </div>
+            <div>
+                <a href="#" class="block py-2.5 px-4 rounded hover:bg-red-600 text-indigo-200 transition">Log Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+            
+            <!-- Top Navbar -->
+            <header class="bg-white shadow-sm h-16 flex items-center justify-between px-6">
+                <h2 class="text-xl font-semibold text-gray-800">Overview</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium text-gray-600">Welcome, User</span>
+                    <div class="h-9 w-9 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">U</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Body -->
+            <main class="p-6">
+                
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Total Balance</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">$4,250.00</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Monthly Income</p>
+                        <p class="text-3xl font-bold text-emerald-600 mt-2">+$3,200.00</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Monthly Expenses</p>
+                        <p class="text-3xl font-bold text-rose-600 mt-2">-$1,150.00</p>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions Table -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                        <h3 class="font-semibold text-gray-800">Recent Transactions</h3>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition">Add Transaction</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
+                                    <th class="py-3 px-6">Description</th>
+                                    <th class="py-3 px-6">Category</th>
+                                    <th class="py-3 px-6">Date</th>
+                                    <th class="py-3 px-6">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
+                                <tr>
+                                    <td class="py-4 px-6 font-medium text-gray-900">Grocery Store</td>
+                                    <td class="py-4 px-6">Food</td>
+                                    <td class="py-4 px-6">Oct 14, 2026</td>
+                                    <td class="py-4 px-6 text-rose-600 font-semibold">-$84.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-6 font-medium text-gray-900">Freelance Project</td>
+                                    <td class="py-4 px-6">Income</td>
+                                    <td class="py-4 px-6">Oct 12, 2026</td>
+                                    <td class="py-4 px-6 text-emerald-600 font-semibold">+$850.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-6 font-medium text-gray-900">Electric Bill</td>
+                                    <td class="py-4 px-6">Utilities</td>
+                                    <td class="py-4 px-6">Oct 10, 2026</td>
+                                    <td class="py-4 px-6 text-rose-600 font-semibold">-$65.20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>
