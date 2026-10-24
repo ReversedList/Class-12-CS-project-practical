@@ -3,6 +3,7 @@ from main_app import get_db_connection as connection_sql
 from werkzeug.security import check_password_hash
 from models import AuthenticationError
 
+
 def Access_check(username_search, passwd_entry):
     conn = connection_sql()
     cur_obj = conn.cursor()

@@ -40,5 +40,6 @@ class User:
             msg_warning = "Invalid age (users under age 3 is not permitted and age above 120 is not permitted,if you by any chance is above 120 congrats on a long life please contanct customer service)"
             raise ValueError(msg_warning)
 
+
 class AuthenticationError(Exception):
     pass
