@@ -1,0 +1,1 @@
+%s searches to match the username passed as the parameter by the cursor.exexute()
