@@ -1,7 +1,7 @@
 import os
 
 import mysql.connector as ms
-from models import AuthenticationError, User, UsernameTakenError
+from app.models import AuthenticationError, User, UsernameTakenError
 from mysql.connector.errorcode import ER_DUP_ENTRY
 from werkzeug.security import check_password_hash
 
