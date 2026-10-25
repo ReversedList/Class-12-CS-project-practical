@@ -47,7 +47,7 @@ def store_user(user: User):
             cursor.close()
     except ms.Error as err:
         conn.rollback()
-        if err.errno == err.ER_DUP_ENTRY:
+        if err.errno == ER_DUP_ENTRY:
             raise UsernameTakenError("Username already taken.") from None
         raise
     finally:
