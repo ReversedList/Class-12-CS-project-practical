@@ -66,6 +66,20 @@ class User:
         hashed_password = generate_password_hash(password_plain)
         return hashed_password
 
+    @classmethod
+    def create_user(
+        cls, username: str, age: int, password
+    ) -> "User":  # this function creates the User object with the help of the class
+        valid_username = cls.name_validity(username)
+        valid_age = cls.age_validity(age)
+        valid_password = cls.password_validity(password)
+        valid_hash = cls.hash_password(valid_password)
+
+        return cls(valid_username, valid_age, valid_hash)
+
 
 class AuthenticationError(Exception):
+    pass
+
+class UsernameTakenError(Exception):
     pass

@@ -1,7 +1,8 @@
 import os
 
 import mysql.connector as ms
-from models import AuthenticationError
+from models import AuthenticationError, User, UsernameTakenError
+from mysql.connector.errorcode import ER_DUP_ENTRY
 from werkzeug.security import check_password_hash
 
 
@@ -32,3 +33,23 @@ def access_check(username_search, passwd_entry):
     finally:
         cur_obj.close()
         conn.close()
+
+
+def store_user(user: User):
+    query = "INSERT INTO users (username, age, password_hash) VALUES (%s, %s, %s)"
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        try:
+            cursor.execute(query, (user.username, user.age, user.password_hash))
+            conn.commit()
+        finally:
+            cursor.close()
+    except ms.Error as err:
+        conn.rollback()
+        if err.errno == err.ER_DUP_ENTRY:
+            raise UsernameTakenError("Username already taken.") from None
+        raise
+    finally:
+        conn.close()
+    return True
