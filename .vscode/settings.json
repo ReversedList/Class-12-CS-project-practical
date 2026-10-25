@@ -1,3 +1,8 @@
 {
-    "python.terminal.useEnvFile": true
+  "python.terminal.useEnvFile": true,
+  "python.testing.pytestArgs": [
+    "test_hope"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }
