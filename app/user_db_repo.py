@@ -1,11 +1,21 @@
+import os
+
 import mysql.connector as ms
-from main_app import get_db_connection as connection_sql
-from werkzeug.security import check_password_hash
 from models import AuthenticationError
+from werkzeug.security import check_password_hash
 
 
-def Access_check(username_search, passwd_entry):
-    conn = connection_sql()
+def get_db_connection():
+    return ms.connect(
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+    )
+
+
+def access_check(username_search, passwd_entry):
+    conn = get_db_connection()
     cur_obj = conn.cursor()
     try:
         q1 = """
