@@ -1,15 +1,62 @@
-<!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content "width=device-width, initial-scale=1.0">
-        <title>Financial Manager: Login</title>
-    </head>
-    <body>
-        <h1>
-            Login in to the financial manager
-        </h1>
-        
+Why this looks bad?
 
-    </body>
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Manager: Login</title>
+    <style>
+      body {
+        background-color: #ceced2;
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .login_box {
+        background-color: azure;
+        border: #262626;
+      }
+      .login_box input {
+        background-color: #262626;
+        color: white;
+        border: 2px solid transparent;
+        border-radius: 14px;
+        padding: 16px 20px;
+        font-size: 16px;
+        outline: none;
+      }
+      .login_box input::placeholder {
+        color: #8a8a8a;
+      }
+      .login_box input:focus {
+        border-color: #0a74e6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login in to the financial manager</h1>
+    <div class="container">
+      <div class="login_box">
+        <h3>login</h3>
+        <form method="post">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
+
+```
