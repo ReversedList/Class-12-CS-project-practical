@@ -1,15 +1,12 @@
-Why this looks bad?
-
-```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Financial Manager: Login</title>
+    <title>Login</title>
     <style>
       body {
-        background-color: #ceced2;
+        background-color: #262626;
         height: 100%;
         margin: 0;
       }
@@ -20,12 +17,21 @@ Why this looks bad?
         height: 100vh;
       }
       .login_box {
-        background-color: azure;
+        background-color: #262626;
         border: #262626;
+        padding: 100px;
+        width: fit-content;
+        height: fit-content;
+        background: #1c1c1e;
+        border-radius: 20px;
+        box-shadow:
+          0 2px 4px rgba(0, 0, 0, 0.4),
+          0 12px 24px rgba(0, 0, 0, 0.5),
+          0 32px 64px rgba(0, 0, 0, 0.6);
       }
+
       .login_box input {
         background-color: #262626;
-        color: white;
         border: 2px solid transparent;
         border-radius: 14px;
         padding: 16px 20px;
@@ -33,18 +39,20 @@ Why this looks bad?
         outline: none;
       }
       .login_box input::placeholder {
-        color: #8a8a8a;
+        color: #c2c0c0;
       }
       .login_box input:focus {
-        border-color: #0a74e6;
+        border-color: #262626;
+      }
+      .headingg {
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h1>Login in to the financial manager</h1>
     <div class="container">
       <div class="login_box">
-        <h3>login</h3>
+        <h1 class="headingg">Login in to the financial manager</h1>
         <form method="post">
           <input type="text" name="username" placeholder="Username" required />
           <input
@@ -58,5 +66,3 @@ Why this looks bad?
     </div>
   </body>
 </html>
-
-```
