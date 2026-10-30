@@ -1,4 +1,0 @@
-%s searches to match the username passed as the parameter by the cursor.exexute()
-#  you can easily check if the argument/parameter  is the desired type by
->>>not isinstance(pass_wd, str)
-general form not instance(argument ,type_you_want_it_to_be)
