@@ -1,7 +1,7 @@
 # TODO: make a dashboard html file and change fill_it to that respective file name (do it pls)
 
-from flask import Flask, render_template, request
 from auth import login_to_acc
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
